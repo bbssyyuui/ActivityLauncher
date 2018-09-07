@@ -1,0 +1,2 @@
+# ActivityLauncher
+告别onActivityResult，通过Callback方式的Activity跳转
