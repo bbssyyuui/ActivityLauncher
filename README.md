@@ -27,9 +27,19 @@ implementation 'com.github.bbssyyuui:ActivityLauncher:1.0.2'
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // 启动Activity
+        // 启动Activity（方式一）
         ActivityLauncher.init(this)
                 .startActivityForResult(TestActivity.class, new ActivityLauncher.Callback() {
+                    @Override
+                    public void onActivityResult(int resultCode, Intent data) {
+                        // 处理回调信息
+                    }
+                });
+                
+        // 启动Activity（方式二）
+        Intent intent = new Intent(this, TestActivity.class);
+        ActivityLauncher.init(this)
+                .startActivityForResult(intent, new ActivityLauncher.Callback() {
                     @Override
                     public void onActivityResult(int resultCode, Intent data) {
                         // 处理回调信息
